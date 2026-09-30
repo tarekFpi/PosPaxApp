@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/mail_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/disable_btn_color"
+                    android:src="@drawable/ic_arrow_back_24"
+                    app:backgroundTint="@color/purple_200"
+                    app:elevation="0dp"
+                    app:fabCustomSize="30dp" />
+
+                <TextView
+                    android:id="@+id/bottom_sheet_items_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/backButton"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="@string/device_activation_form"
+                    android:textColor="#444444"
+                    android:textFontWeight="700"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/enter_your_merchant_id_to_approve_this_device"
+                    android:textColor="#444444"
+                    android:textFontWeight="300"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/merchant_id_et"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/radius_white"
+                android:hint="@string/please_enter_your_mid"
+                android:inputType="number"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/request_access_link_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mail_layout"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius_btn_bg"
+            android:text="@string/request_access_code"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_below="@+id/mail_layout"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius_btn_bg">
+
+            <com.metagalactic.dotprogressbar.DotProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:dpb_animationDuration="500"
+                app:dpb_dotColor="@color/white"
+                app:dpb_dotRadius="4dp"
+                app:dpb_dotSpacing="10dp"
+                app:dpb_noOfDots="3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

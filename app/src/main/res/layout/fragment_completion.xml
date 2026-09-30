@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_bg"
+    android:fitsSystemWindows="true"
+    tools:context="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.sub_fragments.CompletionFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/completion_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:contentDescription="@string/go_back"
+                android:src="@drawable/ic_arrow_back_24"
+                app:backgroundTint="@color/purple_200"
+                app:elevation="0dp"
+                app:fabCustomSize="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/completion"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/date_filter_btn"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/radius_white"
+            android:drawableEnd="@drawable/icon_date_calender_27"
+            android:drawableTint="@color/purple_200"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="start"
+            android:paddingStart="10dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="10dp"
+            android:text="@string/choose_date"
+            android:textAllCaps="false"
+            android:textColor="@color/purple_200" />
+
+        <include layout="@layout/custom_tab_layout" />
+
+        <ProgressBar
+            android:id="@+id/completion_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/purple_200"
+            android:indeterminateTintMode="src_atop" />
+
+        <LinearLayout
+            android:id="@+id/empty_body_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/no_history_illustration" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/text_color"
+                android:text="@string/no_history_found"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/completion_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp"
+            android:padding="10dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

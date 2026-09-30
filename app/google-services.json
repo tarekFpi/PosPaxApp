@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "720317035715",
+    "project_id": "paymentsave-8263f",
+    "storage_bucket": "paymentsave-8263f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720317035715:android:fbd1987e39ddb132249e76",
+        "android_client_info": {
+          "package_name": "com.paymentsave.paymentsave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrBDwSF770HNKJ2Uf6MChfoHnLZferwRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

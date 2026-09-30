@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton android:id="@+id/radio1" android:text="Last 3 Days" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <RadioButton android:id="@+id/radio2" android:text="Today" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <RadioButton android:id="@+id/radio3" android:text="Yesterday" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <RadioButton android:id="@+id/radio5" android:text="This Week" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <RadioButton android:id="@+id/radio4" android:text="Last Week" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <RadioButton android:id="@+id/radio6" android:text="Custom" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+
+</LinearLayout>

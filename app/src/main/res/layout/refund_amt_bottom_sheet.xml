@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/modalBottomSheetContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg">
+
+    <FrameLayout
+        android:id="@+id/design_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/mail_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/refundBackButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/disable_btn_color"
+                        app:backgroundTint="@color/purple_200"
+                        android:src="@drawable/ic_arrow_back_24"
+                        app:elevation="0dp"
+                        app:fabCustomSize="30dp" />
+
+                    <TextView
+                        android:id="@+id/bottom_sheet_items_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/refundBackButton"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="@string/refund_payment"
+                        android:textAllCaps="true"
+                        android:textColor="#444444"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/max_refund_amt_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/max_amount_0"
+                        android:textColor="@android:color/holo_green_dark"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+                <!--                    android:id="@+id/merchant_id_et"-->
+                <EditText
+                    android:id="@+id/refund_amt_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="10dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:hint="@string/enter_the_amount"
+                    android:inputType="numberDecimal"
+                    android:background="@drawable/radius_white"/>
+
+                <LinearLayout
+                    android:id="@+id/reason_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/over_less_amount_reason"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:textColor="@color/text_color"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="@dimen/text_size_normal"/>
+
+                    <EditText
+                        android:id="@+id/refund_reason_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp"
+                        android:padding="10dp"
+                        android:hint="@string/write_here"
+                        android:gravity="start"
+                        android:textSize="@dimen/text_size_normal"
+                        android:inputType="text"
+                        android:background="@drawable/radius_white"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/run_refund_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mail_layout"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/radius_btn_bg"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:text="@string/run_refund" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

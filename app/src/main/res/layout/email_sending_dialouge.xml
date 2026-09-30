@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Share And Make Payment"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:paddingStart="10dp"
+        android:paddingEnd="0dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Email Address"
+        android:textColor="@color/text_color" />
+
+    <EditText
+        android:id="@+id/email_address_et"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/radius_gray_btn"
+        android:hint="@string/please_enter_your_email"
+        android:paddingStart="20dp"
+        android:paddingEnd="10dp"
+        android:inputType="textEmailAddress"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/send_mail_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/radius_gray"
+        android:text="@string/send_via_email"
+        android:textAllCaps="false" />
+
+</LinearLayout>

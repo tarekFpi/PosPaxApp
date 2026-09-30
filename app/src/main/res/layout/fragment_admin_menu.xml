@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/screen_bg"
+        android:fitsSystemWindows="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.AdminMenuFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/admin_menu_back_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:backgroundTint="#EEEEEE"
+                        android:src="@drawable/ic_arrow_back_24"
+                        app:backgroundTint="@color/purple_200"
+                        app:elevation="0dp"
+                        app:fabCustomSize="30dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/admin_menu"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_size_large" />
+                </LinearLayout>
+
+                <!--            <ImageView-->
+                <!--                android:id="@+id/setting_dev_logo"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="65dp"-->
+                <!--                android:paddingStart="60dp"-->
+                <!--                android:paddingEnd="60dp"-->
+                <!--                android:layout_marginBottom="30dp"-->
+                <!--                android:src="@drawable/ic_ptsave"/>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="@string/payment"
+                        android:textColor="@color/disable_text_color"
+                        android:textSize="14sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10sp"
+                        android:background="@drawable/setting_btn_bg"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp">
+
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/tran_details_vector01" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:text="Print Receipt"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="end">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/receipt_print_enable_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/gratuity"
+                                android:thumb="@drawable/thumb_selector"
+                                app:track="@drawable/track_selector" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10sp"
+                        android:background="@drawable/setting_btn_bg"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/gratuity_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:text="@string/gratuity"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="end">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/gratuity_enable_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/gratuity"
+                                android:thumb="@drawable/thumb_selector"
+                                app:track="@drawable/track_selector" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10sp"
+                        android:background="@drawable/setting_btn_bg"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="0dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/pre_auth_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:text="@string/pre_auth"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="15dp"
+                            android:gravity="end">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/pre_auth_btn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/pre_auth"
+                                android:thumb="@drawable/thumb_selector"
+                                app:track="@drawable/track_selector" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:padding="15dp"
+                        android:text="@string/administration"
+                        android:textColor="@color/disable_text_color"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3">
+
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radius_gray_btn"
+                            android:clickable="true"
+                            android:visibility="gone"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/submit_transaction_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="6dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="0dp"
+                                android:text="@string/submit_transactions"
+                                android:textAllCaps="true"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_xsmall" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/history_report"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radius_gray_btn"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:visibility="gone"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/history_report_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="6dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="0dp"
+                                android:text="@string/history_report_two"
+                                android:textAllCaps="true"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_xsmall" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radius_gray_btn"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/system_info_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="6dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="0dp"
+                                android:text="@string/system_info"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_xsmall" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radius_gray_btn"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/user_manager_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="6dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="0dp"
+                                android:text="@string/user_manager"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_xsmall" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radius_gray_btn"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/system_info_icon" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semi_bold"
+                                android:gravity="center"
+                                android:paddingStart="6dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="0dp"
+                                android:text="@string/dcc_rates"
+                                android:textColor="@color/purple_200"
+                                android:textSize="@dimen/text_size_xsmall" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semi_bold"
+                        android:padding="10dp"
+                        android:text="@string/paymentsave_terminal"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:id="@+id/setting_mid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/setting_tid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:id="@+id/setting_sn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/setting_app_version"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>

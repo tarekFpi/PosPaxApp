@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_supervisor_pin"
+            android:textSize="22sp"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/are_you_sure_you_want_to_update_your_supervisor_pin"
+            android:textSize="14sp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/poppins_medium"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/teal_200"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/pp_cancel_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textColor="#5E5E5E"
+            android:background="#EDEDED"/>
+
+        <Button
+            android:id="@+id/pp_confirm_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/confirm"
+            android:background="@color/purple_200"/>
+
+    </LinearLayout>
+
+</LinearLayout>

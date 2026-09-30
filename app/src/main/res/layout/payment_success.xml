@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/success_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/success_icon" />
+
+    <TextView
+        android:id="@+id/s_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/success_icon"
+        android:layout_centerHorizontal="true"
+        android:text="@string/payment_success"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ss_r_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/s_text"
+        android:layout_centerHorizontal="true"
+        android:text="@string/your_payment_has_been_successfully_done"
+        android:textColor="@color/disable_text_color"
+        android:textSize="@dimen/text_size_medium" />
+
+    <View
+        android:id="@+id/s_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ss_r_text"
+        android:layout_margin="15dp"
+        android:background="@color/disable_text_color" />
+
+    <TextView
+        android:id="@+id/s_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_amount"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:layout_below="@+id/s_view"/>
+
+    <TextView
+        android:id="@+id/split_success_amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0_00"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/s_total"/>
+
+    <Button
+        android:id="@+id/home_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back_to_home"
+        android:textAllCaps="false"
+        android:layout_below="@+id/split_success_amt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/radius_btn_bg"/>
+
+</RelativeLayout>

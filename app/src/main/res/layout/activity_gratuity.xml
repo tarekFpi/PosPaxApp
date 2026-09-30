@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_bg"
+    android:orientation="vertical"
+    tools:context="com.paymentsave.paymentsave.coreapp.activities.gratuity.GratuityActivity">
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/gratuity_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/disable_btn_color"
+        android:src="@drawable/ic_arrow_back_24"
+        app:backgroundTint="@color/purple_200"
+        app:elevation="0dp"
+        app:fabCustomSize="30dp" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="15dp"
+        android:paddingStart="80dp"
+        android:paddingEnd="80dp"
+        android:src="@drawable/ic_ptsave" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="@string/would_you_like_to_leave_a_tip"
+        android:textSize="@dimen/text_size_x_medium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|bottom"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/no_thanks_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/radius_gray_btn"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="No, Thanks !"
+                android:textColor="@color/button_stroke_gray" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/gratuity_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@android:color/transparent" />
+
+        <LinearLayout
+            android:id="@+id/custom_gratuity_btn_lv"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="12sp"
+            android:background="@drawable/radius_btn_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/custom_amount"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_x_medium" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/gratuity_back_button2"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/radius_transparent_btn"
+            android:minHeight="50dp"
+            android:text="@string/go_back"
+            android:textColor="@color/purple_200" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

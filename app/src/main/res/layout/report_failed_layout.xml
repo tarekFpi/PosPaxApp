@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="15dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/cancel_icon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/failed"
+        android:textSize="@dimen/text_size_large"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/error_color"/>
+
+    <TextView
+        android:id="@+id/sub_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_enough_transaction_found_for_batch"
+        android:textSize="@dimen/text_size_normal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/poppins_regular"
+        />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/yellow"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/exit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="@string/close"/>
+
+    </LinearLayout>
+
+</LinearLayout>

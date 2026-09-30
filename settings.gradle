@@ -1,0 +1,38 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven {
+            url 'https://maven.google.com'
+        }
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases/'
+        }
+
+        jcenter()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://repo.eclipse.org/content/repositories/paho-releases/"
+        }
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+
+
+
+
+rootProject.name = "Payment Pax"
+include ':app'
+include ':dotprogressbar'

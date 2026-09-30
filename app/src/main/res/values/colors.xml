@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- <color name="purple_200">#FFBB86FC</color>-->
+    <!-- <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_100">#FF0E91BF</color>-->
+    <color name="purple_100">#FFA4D5E7</color>
+    <color name="purple_200">#FF17479E</color>
+    <color name="button_stroke_gray">#80444444</color>
+    <color name="base">#FF00B5FA</color>
+    <color name="purple_500">#2B2B2B</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#75D5FE</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="error_color">#E1473D</color>
+    <color name="text_color">#272727</color>
+    <color name="gray_light_color">#828282</color>
+    <color name="tab_item_color">#1974E6</color>
+    <color name="selected_tab_item_bg">#F6F9FF</color>
+    <color name="yellow">#FF9800</color>
+
+    <color name="amt_text_color">#444444</color>
+    <color name="disable_text_color">#A6A6A6</color>
+    <color name="disable_btn_color">#EEEEEE</color>
+    <color name="green_text_color">#4CAF50</color>
+</resources>

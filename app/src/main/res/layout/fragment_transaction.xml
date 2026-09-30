@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.paymentsave.paymentsave.coreapp.fragments.transactions.TransactionFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="55dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="0dp">
+
+            <EditText
+                android:id="@+id/transaction_search_et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_radius_bg"
+                android:drawableStart="@drawable/search_icon"
+                android:drawablePadding="15dp"
+                android:hint="@string/search"
+                android:imeOptions="actionDone"
+                android:paddingStart="16dp"
+                android:paddingEnd="12dp"
+                android:singleLine="true" />
+
+            <ImageButton
+                android:id="@+id/filter_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/filter_btn_radious"
+                android:padding="18dp"
+                android:src="@drawable/filter_icon" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:paddingStart="15dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="10dp"
+                android:text="@string/transactions"
+                android:textColor="@color/disable_text_color"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tnx_type_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp" />
+
+
+        <!--        <TextView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="start"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:fontFamily="@font/poppins_medium"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:text="Transaction History"-->
+        <!--            android:textColor="@color/text_color"-->
+        <!--            android:textSize="@dimen/text_size_x_medium" />-->
+
+        <ProgressBar
+            android:id="@+id/transaction_list_pb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:indeterminateTint="@color/purple_200"
+            android:indeterminateTintMode="src_atop" />
+
+        <LinearLayout
+            android:id="@+id/no_history_illustration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/no_history_illustration"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/no_history_found"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_medium"/>
+        </LinearLayout>
+
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/transaction_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/report_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true"
+            android:visibility="gone"/>
+
+
+
+        <LinearLayout
+            android:id="@+id/page_count_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:src="@drawable/ic_arrow_back_24"
+                app:backgroundTint="@color/purple_200"
+                app:elevation="0dp"
+                app:fabCustomSize="30dp" />
+
+            <TextView
+                android:id="@+id/page_count_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/page_1_of_1" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="#EEEEEE"
+                android:src="@drawable/ic_arrow_right_24"
+                app:backgroundTint="@color/purple_200"
+                app:elevation="0dp"
+                app:fabCustomSize="30dp"
+                app:rippleColor="@color/purple_200" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

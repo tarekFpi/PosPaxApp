@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/onboardFragment">
+
+    <fragment
+        android:id="@+id/onboardFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.onboard.OnboardHomeFragment"
+        android:label="Onboard Home"
+        tools:layout="@layout/fragment_onboard_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.transactions.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_transactionFragment_to_transactionDetailsFragment"
+            app:destination="@id/transactionDetailsFragment" />
+        <action
+            android:id="@+id/action_transactionFragment_to_reportDetialsFragment"
+            app:destination="@id/reportDetialsFragment" />
+        <action
+            android:id="@+id/action_transactionFragment_to_reportPinVerifyFragment"
+            app:destination="@id/reportPinVerifyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailsFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.transactions.transactionDetails.TransactionDetailsFragment"
+        android:label="fragment_transaction_details"
+        tools:layout="@layout/fragment_transaction_details" >
+        <action
+            android:id="@+id/action_transactionDetailsFragment_to_PDFViewFragment"
+            app:destination="@id/PDFViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.SettingFragment"
+        android:label="fragment_setting2"
+        tools:layout="@layout/fragment_setting" >
+<!--        android:id="@+id/settingFragment"-->
+<!--        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.Setting2Fragment"-->
+<!--        android:label="fragment_setting2"-->
+<!--        tools:layout="@layout/fragment_setting2" >-->
+        <action
+            android:id="@+id/action_settingFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_adminMenuFragment"
+            app:destination="@id/adminMenuFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_adminPinFragment"
+            app:destination="@id/adminPinFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_printStrFragment"
+            app:destination="@id/printStrFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_completionFragment"
+            app:destination="@id/completionFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_supervisorPinChangeFragment"
+            app:destination="@id/supervisorPinChangeFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_autoBatchSettingFragment"
+            app:destination="@id/autoBatchSettingFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_paymentLinksFragment"
+            app:destination="@id/paymentLinksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_completionFragment"
+            app:destination="@id/completionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminMenuFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.AdminMenuFragment"
+        android:label="fragment_admin_menu"
+        tools:layout="@layout/fragment_admin_menu" />
+    <fragment
+        android:id="@+id/completionFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.sub_fragments.CompletionFragment"
+        android:label="fragment_completion"
+        tools:layout="@layout/fragment_completion" />
+    <fragment
+        android:id="@+id/adminPinFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.verifySupervisorPin.VerifyPinFragment"
+        android:label="fragment_admin_pin"
+        tools:layout="@layout/fragment_verify_pin" >
+        <action
+            android:id="@+id/action_adminPinFragment_to_adminMenuFragment"
+            app:destination="@id/adminMenuFragment"
+            app:popUpTo="@+id/settingFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/printStrFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.activities.test.printer.PrintStrFragment"
+        android:label="PrintStrFragment" />
+    <fragment
+        android:id="@+id/reportDetialsFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.transactions.reportDetails.ReportDetialsFragment"
+        android:label="fragment_report_detials"
+        tools:layout="@layout/fragment_report_detials" />
+    <fragment
+        android:id="@+id/PDFViewFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.pdfPreview.PDFViewFragment"
+        android:label="fragment_p_d_f_view"
+        tools:layout="@layout/fragment_p_d_f_view" />
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.reports.ReportFragment"
+        android:label="fragment_report"
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_reportFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportPinVerifyFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.reports.fragments.ReportPinVerifyFragment"
+        android:label="fragment_report_pin_verify"
+        tools:layout="@layout/fragment_report_pin_verify" >
+        <action
+            android:id="@+id/action_reportPinVerifyFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.settings.fragments.SupportFragment"
+        android:label="fragment_support"
+        tools:layout="@layout/fragment_support_screen" />
+    <fragment
+        android:id="@+id/supervisorPinChangeFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.supervisorPinChange.SupervisorPinChangeFragment"
+        android:label="fragment_supervisor_pin_change"
+        tools:layout="@layout/fragment_supervisor_pin_change" />
+    <fragment
+        android:id="@+id/autoBatchSettingFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.autoBatch.AutoBatchSettingFragment"
+        android:label="fragment_auto_batch_setting"
+        tools:layout="@layout/fragment_auto_batch_setting" />
+    <fragment
+        android:id="@+id/paymentLinksFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.payByLink.PaymentLinksFragment"
+        android:label="fragment_payment_links"
+        tools:layout="@layout/fragment_payment_links" >
+        <action
+            android:id="@+id/action_paymentLinksFragment_to_createPBLFragment"
+            app:destination="@id/createPBLFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPBLFragment"
+        android:name="com.paymentsave.paymentsave.coreapp.fragments.payByLink.CreatePBLFragment"
+        android:label="fragment_create_p_b_l"
+        tools:layout="@layout/fragment_create_p_b_l" >
+
+    </fragment>
+
+</navigation>

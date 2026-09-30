@@ -1,0 +1,119 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PaymentPax" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--    <style name="CustomThemePax" parent="Theme.AppCompat.DayNight.NoActionBar">-->
+    <style name="CustomThemePax" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/purple_200</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
+        <item name="materialButtonStyle">@style/material_btn</item>
+    </style>
+
+    <style name="material_btn" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+        <item name="backgroundTint">@null</item>
+        <item name="colorButtonNormal">@color/purple_200</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="input_btn" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+        <item name="backgroundTint">@drawable/button_ripple</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="colorPrimary">@color/material_on_primary_disabled</item>
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="MyShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <!--    BottomSheet Style for Keyboard Up-->
+    <style name="BottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <!--    BottomSheet Style for Keyboard Up-->
+
+
+    <!--Alert Dialog-->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--Alert Dialog-->
+
+    <style name="CustomTabItemStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <!-- Material Date Picker Theme-->
+    <style name="MaterialCalendarTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <!-- just override the colors used in the default style -->
+        <!-- <item name="colorOnPrimary">@color/primaryDarkColor</item>-->
+        <item name="colorPrimary">@color/purple_200</item>
+    </style>
+
+<!--    <item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--Transparent dialog -->
+    <style name="TransparentProgressDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">#ADFFFFFF</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="colorAccent">@color/purple_200</item>
+    </style>
+
+</resources>

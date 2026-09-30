@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/enable_general_mode"
+        android:title="@string/enable_general_mode"/>
+
+    <item
+        android:id="@+id/wifi_setting_btn"
+        android:title="@string/wi_fi_settings"/>
+
+    <item
+        android:id="@+id/cellular_setting_btn"
+        android:title="@string/cellular_settings"/>
+
+    <item
+        android:id="@+id/exit_app_btn"
+        android:title="@string/exit_app"/>
+
+
+<!--    <item-->
+<!--        android:id="@+id/action_more"-->
+<!--        android:icon="@android:drawable/ic_menu_more"-->
+<!--        android:orderInCategory="1"-->
+<!--        android:title="More Options »"-->
+<!--        app:showAsAction="always">-->
+
+
+<!--        <menu>-->
+
+<!--            -->
+
+<!--        </menu>-->
+<!--    </item>-->
+
+
+</menu>

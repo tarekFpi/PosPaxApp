@@ -1,0 +1,15 @@
+Neptune SDK integrate guide by Radwan Hossain:
+----------------------------------------------
+1. Open android studio project in project mode.
+2. copy and paste the .jar file to app->libs folder
+3. Add this line to gradle (app level)
+   1. dependencies -> implementation fileTree(include: ['*.jar'], dir: 'libs')
+   2. defaultConfig -> 
+        ndk {
+            abiFilters 'armeabi'
+        }
+   3. copy and paste jniLibs folder to app->src->main folder.
+4. add two line in AndroidMenifest.xml 
+	<application
+            android:name=".coreapp.utils.DemoApp"
+            android:extractNativeLibs="true"

@@ -1,0 +1,295 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+}
+
+android {
+    namespace 'com.paymentsave.paymentsave'
+    compileSdk 34
+
+    signingConfigs {
+        release {
+            keyAlias 'paymentpax'
+            keyPassword 'paymentpax2020!'
+            storeFile file('jks/PayPax.jks')
+            storePassword 'paymentpax2020!'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.paymentsave.paymentsave"
+        minSdk 23
+        targetSdk 34
+        versionCode 120
+        versionName "1.2.0"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        // OpenObserve (Panoptes) OTLP ingest. Token is loaded from
+        // openobserve.properties (gitignored) — never commit the ingest secret.
+        def openobserveToken = loadOpenObserveIngestToken()
+        buildConfigField "String", "OPENOBSERVE_ENDPOINT", '"https://panoptes-prd.psapp.uk/api/default/v1/logs"'
+        buildConfigField "String", "OPENOBSERVE_INGEST_EMAIL", '"terminal-ingest@paymentsave.com"'
+        buildConfigField "String", "OPENOBSERVE_INGEST_TOKEN", "\"${escapeForBuildConfig(openobserveToken)}\""
+        buildConfigField "String", "OPENOBSERVE_STREAM", '"terminal"'
+        buildConfigField "String", "OPENOBSERVE_SERVICE_NAME", '"pax-terminal"'
+        buildConfigField "String", "OPENOBSERVE_ENVIRONMENT", '"stg"'
+        ndk {
+            abiFilters 'armeabi'
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+//            minifyEnabled true
+//            shrinkResources false
+            buildConfigField "String", "BASE_URL", '"https://stage.psapp.uk/"'
+            buildConfigField "String", "BASE_IMAGE_URL", '"https://stage.psapp.uk/media/"'
+            buildConfigField "String", "QR", '"https://merchant.psapp.uk/"'
+
+//             buildConfigField "String", "BASE_URL", '"https://cloud.psapp.uk/"' //live server
+//            buildConfigField "String", "BASE_IMAGE_URL", '"https://cloud.psapp.uk/media/"'
+//            buildConfigField "String", "QR", '"https://merchant.psapp.uk/"'
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+//                    'proguard-rules.pro'
+        }
+        release {
+            signingConfig signingConfigs.release
+            buildConfigField "String", "BASE_URL", '"https://stage.psapp.uk/"'
+            buildConfigField "String", "BASE_IMAGE_URL", '"https://stage.psapp.uk/media/"'
+            buildConfigField "String", "QR", '"https://merchant.psapp.uk/"'
+
+//            buildConfigField "String", "BASE_URL", '"https://cloud.psapp.uk/"'
+//            buildConfigField "String", "BASE_IMAGE_URL", '"https://cloud.psapp.uk/media/"'
+//            buildConfigField "String", "QR", '"https://merchant.psapp.uk/"'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.applicationId}_V${variant.versionCode}_VN-${variant.versionName}_" + new Date().format('yyyy-MM-dd') + ".apk"
+        }
+    }
+
+
+
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:3.0.6'
+
+    ext {
+        minSdkVer = 21
+        targetSdkVer = 30
+        compileSdkVer = 30
+        androidToolsVersion = "3.3.2"
+        buildToolsVer = "28.0.3"
+        appCompatVersion = "28.0.0"
+        designVersion = "28.0.0"
+        paxstoreVersion = "7.0.1"
+        nanoHttpdVersion = "2.3.1"
+        multiDexVersion = "1.0.3"
+        constraintLayoutVersion = "1.1.3"
+        androidSupportVersion = "28.0.0"
+        jUnitVersion = "4.12"
+        lombokVersion = "1.18.2"
+        leakCanaryInstallVersion = "1.6.3"
+        lifeCycleExtensionsVersion = "1.1.1"
+        lifeCycleCompilerVersion = "1.1.1"
+        gsonVersion = "2.8.5"
+        stanfyVersion = "0.1.+"
+        supportPreferenceVersion = "28.0.0"
+        supportDesignVersion = "28.0.0"
+        supportVectorDrawableVersion = "28.0.0"
+        appSupportAnnotations = "28.0.0"
+        testRunnerVersion = "1.0.2"
+        testEspressoCoreVersion = "3.0.2"
+        ksoapVersion = "3.6.0"
+        uiAutomatorVersion = "2.1.2"
+        hamcrestLibraryVersion = "1.3"
+        testRunnerVersion = "0.5"
+        testRulesVersion = "0.5"
+    }
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    //    debugImplementation files('libs/libpositive-0.01.18.4784-debug.aar')
+    //    debugImplementation files('libs/libpositive-0.01.20.4807-debug.aar')
+    //    releaseImplementation files('libs/libpositive-0.01.20.4807-release.aar')
+
+//    debugImplementation files('libs/libpositive-0.01.20.4811-debug.aar')
+//    releaseImplementation files('libs/libpositive-0.01.20.4811-release.aar')
+
+    debugImplementation files('libs/libpositive-0.01.20.4816-release.aar')
+    releaseImplementation files('libs/libpositive-0.01.20.4816-release.aar')
+
+//    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+//    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    implementation "org.nanohttpd:nanohttpd:$nanoHttpdVersion"
+    implementation "com.android.support:support-annotations:$appSupportAnnotations"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+//    implementation "com.amitshekhar.android:android-networking:1.0.2"
+    implementation 'com.github.amitshekhariitbhu.Fast-Android-Networking:android-networking:1.0.4'
+
+    // retrofit or api calling library
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    // Pin OkHttp 4.x. OpenTelemetry 1.52+ prefers OkHttp 5 (okhttp-android),
+    // which requires compileSdk 36. This app stays on compileSdk 34 / AGP 8.2.
+    implementation platform("com.squareup.okhttp3:okhttp-bom:4.12.0")
+    implementation "com.squareup.okhttp3:okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor"
+
+    // MVVM library
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation "android.arch.lifecycle:viewmodel:1.1.1"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // QR Generate
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.5.3'
+
+    implementation platform('com.google.firebase:firebase-bom:32.7.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics:18.6.1'
+
+    // Runtime Permission
+    implementation 'com.karumi:dexter:6.2.2'
+    implementation 'com.itextpdf:itextg:5.5.10'
+//    implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
+//    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+//    implementation("com.github.armcha:SpaceNavigationView:1.4.2")
+//    implementation("com.github.armcha:SpaceNavigationView:1.6.0")
+    implementation project(":dotprogressbar")
+
+    // Room Database
+    implementation "androidx.room:room-runtime:2.4.0"
+    annotationProcessor "androidx.room:room-compiler:2.4.0"
+
+    // Gif ImageView
+    implementation "pl.droidsonroids.gif:android-gif-drawable:1.2.22"
+
+    //Toasty
+    implementation 'com.github.GrenderG:Toasty:1.5.2'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Lottiefiles
+    implementation "com.airbnb.android:lottie:3.5.0"
+
+    // WorkManager
+    implementation "androidx.work:work-runtime:2.7.0"
+    
+    // Websocket
+    implementation 'tech.gusavila92:java-android-websocket-client:1.2.2'
+
+    // AWS IOT Core
+    implementation "com.amazonaws:aws-android-sdk-core:2.81.1"
+    implementation "com.amazonaws:aws-android-sdk-iot:2.81.1"
+
+    // MQTT
+    implementation "org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5"
+    implementation "org.eclipse.paho:org.eclipse.paho.android.service:1.1.1"
+//    implementation 'org.bouncycastle:bcpkix-jdk15on:1.59'
+    implementation "org.bouncycastle:bcprov-jdk15to18:1.70"
+    implementation "org.bouncycastle:bcpkix-jdk15to18:1.70"
+
+    // OpenTelemetry Logging — pin every module to the BOM version.
+    // A mixed graph (new exporter + old sdk-common) crashes at runtime with
+    // NoSuchMethodError: Clock.getDefault().
+    def openTelemetryVersion = "1.65.0"
+    implementation platform("io.opentelemetry:opentelemetry-bom:$openTelemetryVersion")
+    implementation "io.opentelemetry:opentelemetry-api"
+    implementation "io.opentelemetry:opentelemetry-sdk"
+    implementation "io.opentelemetry:opentelemetry-sdk-common"
+    implementation "io.opentelemetry:opentelemetry-sdk-logs"
+    implementation "io.opentelemetry:opentelemetry-exporter-otlp"
+    implementation "io.opentelemetry:opentelemetry-exporter-sender-okhttp"
+}
+
+// OpenTelemetry's OTLP OkHttp sender pulls com.squareup.okhttp3:okhttp-android:5.x
+// on Android. That AAR requires compileSdk 36. Rewrite it to OkHttp 4.12, which
+// the exporter still supports and this project's AGP/SDK can compile.
+configurations.configureEach {
+    resolutionStrategy {
+        force "com.squareup.okhttp3:okhttp:4.12.0"
+        force "com.squareup.okhttp3:logging-interceptor:4.12.0"
+        force "io.opentelemetry:opentelemetry-api:1.65.0"
+        force "io.opentelemetry:opentelemetry-sdk:1.65.0"
+        force "io.opentelemetry:opentelemetry-sdk-common:1.65.0"
+        force "io.opentelemetry:opentelemetry-sdk-logs:1.65.0"
+        force "io.opentelemetry:opentelemetry-sdk-metrics:1.65.0"
+        force "io.opentelemetry:opentelemetry-sdk-trace:1.65.0"
+        force "io.opentelemetry:opentelemetry-exporter-otlp:1.65.0"
+        force "io.opentelemetry:opentelemetry-exporter-sender-okhttp:1.65.0"
+        force "io.opentelemetry:opentelemetry-exporter-common:1.65.0"
+        eachDependency { details ->
+            if (details.requested.group == "com.squareup.okhttp3"
+                    && (details.requested.name == "okhttp-android"
+                    || details.requested.name == "okhttp-jvm")) {
+                details.useTarget("com.squareup.okhttp3:okhttp:4.12.0")
+                details.because("okhttp-android 5.x requires compileSdk 36")
+            }
+        }
+    }
+}
+
+def loadOpenObserveIngestToken() {
+    if (project.hasProperty("OPENOBSERVE_INGEST_TOKEN")) {
+        return project.property("OPENOBSERVE_INGEST_TOKEN").toString()
+    }
+
+    def propertiesFile = rootProject.file("openobserve.properties")
+    if (!propertiesFile.exists()) {
+        return ""
+    }
+
+    def properties = new Properties()
+    propertiesFile.withInputStream { stream ->
+        properties.load(stream)
+    }
+    return properties.getProperty("OPENOBSERVE_INGEST_TOKEN", "")
+}
+
+def escapeForBuildConfig(String value) {
+    if (value == null) {
+        return ""
+    }
+    return value.replace("\\", "\\\\").replace("\"", "\\\"")
+}

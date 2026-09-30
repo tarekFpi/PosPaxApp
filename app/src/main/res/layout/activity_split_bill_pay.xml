@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.paymentsave.paymentsave.coreapp.activities.splitBillPay.SplitBillPayActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/gradient_bg"
+            android:padding="10dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/split_bill_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/disable_btn_color"
+                android:src="@drawable/ic_arrow_back_24"
+                app:backgroundTint="@color/purple_200"
+                app:elevation="0dp"
+                app:fabCustomSize="30dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/total_amt_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="end"
+                android:text="@string/_0_00"
+                android:textColor="@color/tab_item_color"
+                android:textSize="@dimen/text_size_x_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_medium"
+                android:paddingTop="10dp"
+                android:text="@string/split_payment"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_xxx_large" />
+
+            <TextView
+                android:id="@+id/member_count_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:paddingTop="70dp"
+                android:text="@string/payment_1_of_1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/radius_gray"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@string/split_amount"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/amount_value_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="@string/_0_00"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/text_size_super_large" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/disable_text_color" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/remaining_due_amount"
+                android:textColor="@color/disable_text_color"
+                android:textSize="@dimen/text_size_normal" />
+
+            <TextView
+                android:id="@+id/due_amount_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/due_0_00"
+                android:textSize="@dimen/text_size_medium" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/cash_pay_btn"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Cash Pay"-->
+                <!--                    android:textSize="@dimen/text_size_medium"-->
+                <!--                    android:layout_margin="10dp"-->
+                <!--                    android:textColor="@color/text_color"-->
+                <!--                    android:textAllCaps="false"-->
+                <!--                    android:background="@drawable/radius_transparent_btn"/>-->
+                <!--                -->
+
+                <Button
+                    android:id="@+id/card_payment_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/radius_btn_bg"
+                    android:text="@string/pay_now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_medium" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

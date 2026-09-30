@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="6dp"
+            android:background="@drawable/radius_btn_bg"
+            android:backgroundTint="#EFEFEF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_your_pay_option"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/text_color"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/text_size_xlarge"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:background="@drawable/button_ripple"
+            android:layout_margin="6dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/equal_split"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/text_size_medium"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/text_color"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/equal_split_minus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/minus"
+                    android:textSize="@dimen/text_size_x_medium"
+                    android:padding="0dp"
+                    android:textColor="@color/text_color"
+                    android:background="@drawable/circular_transparent_btn"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/equal_split_peoples_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zero"
+                        android:textColor="@color/text_color"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/people"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/equal_split_plus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/plus"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_large"
+                    android:padding="0dp"
+                    android:background="@drawable/circular_transparent_btn"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:background="@drawable/button_ripple"
+            android:layout_margin="6dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/custom_split"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textSize="@dimen/text_size_medium"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/text_color"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/custom_split_minus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/minus"
+                    android:textSize="@dimen/text_size_x_medium"
+                    android:padding="0dp"
+                    android:textColor="@color/text_color"
+                    android:background="@drawable/circular_transparent_btn"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/custom_split_people_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zero"
+                        android:textColor="@color/text_color"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/people"/>
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/custom_split_plus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/plus"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/text_size_large"
+                    android:padding="0dp"
+                    android:background="@drawable/circular_transparent_btn"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+<!--        <Button-->
+<!--            android:id="@+id/equal_split_btn"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:visibility="gone"-->
+<!--            android:background="@drawable/button_ripple"-->
+<!--            android:text="@string/equal_split"-->
+<!--            android:textColor="@color/text_color"-->
+<!--            android:textSize="16sp"-->
+<!--            android:textAllCaps="false"-->
+<!--            app:backgroundTint="@null"-->
+<!--            app:backgroundTintMode="add" />-->
+
+        <Button
+            android:id="@+id/split_option_next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/radius_btn_bg"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            app:backgroundTint="@null"
+            app:backgroundTintMode="add" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

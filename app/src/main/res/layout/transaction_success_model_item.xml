@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/date_sItem_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today"
+        android:padding="10dp"/>
+
+    <RelativeLayout
+        android:id="@+id/success_main_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/radius_gray_btn"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/success_payment_icon"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/pound_icon"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/success_payment_icon"-->
+<!--            android:layout_width="45dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:background="@drawable/green_circle"-->
+<!--            android:src="@drawable/pound_icon"/>-->
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/success_payment_icon"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/success_card_no_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/success_card_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/_00_00pm" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/split_bill_iv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/linearLayout"
+            android:visibility="gone"
+            android:src="@drawable/split_icon2" />
+
+        <ImageView
+            android:id="@+id/reversal_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_toStartOf="@+id/linearLayout"
+            android:layout_centerVertical="true"
+            android:src="@drawable/reversal_bill_icon"
+            android:visibility="gone" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/success_amt_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/_0_00"
+                android:textSize="17sp"
+                android:textColor="@color/text_color"
+                />
+            <TextView
+                android:id="@+id/success_tnx_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:text="@string/success"
+                android:textSize="12sp"
+                android:textColor="#4AD768"/>
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
